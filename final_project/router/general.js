@@ -42,7 +42,7 @@ public_users.get("/", (req, res) => {
     setTimeout(() => {
       resolve(books);
     }, 2000);
-  }).then((books) => res.status(200).json(books));
+  }).then((books) => res.status(200).json({"books": books}));
 });
 
 // // Get book details based on ISBN
@@ -98,7 +98,7 @@ public_users.get("/author/:author", function (req, res) {
       );
       resolve(filteredAuthor);
     }, 2000);
-  }).then((books) => res.status(200).json(books));
+  }).then((books) => res.status(200).json({"booksbyauthor": books}));
 });
 
 // Get all books based on title
@@ -112,7 +112,7 @@ public_users.get("/title/:title", function (req, res) {
       );
       resolve(filteredTitle);
     }, 2000);
-  }).then((books) => res.status(200).json(books));
+  }).then((books) => res.status(200).json({"booksbytitle": books}));
 });
 
 //  Get book review
